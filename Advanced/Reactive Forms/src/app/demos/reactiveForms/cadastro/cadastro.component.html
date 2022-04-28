@@ -7,10 +7,10 @@
                 <label class="col-md-2 control-label" for="nome">Nome Completo</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="nome" placeholder="Nome (requerido)" formControlName="nome" 
-                    [ngClass]="{'is-invalid': cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)}" />
-                    <span class="text-danger" *ngIf="cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)">
-                        <p>Preencha o campo Nome</p>
-                    </span>
+                    [ngClass]="{'is-invalid': displayMessage.nome}" />
+                    <span class="text-danger" *ngIf="displayMessage.nome">
+                        <p [innerHTML]="displayMessage.nome"></p>
+                    </span>    
                 </div>
             </div>
         
